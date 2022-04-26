@@ -1,11 +1,13 @@
 
-
+import Navbar from "./components/Navbar/Navbar";
 function App() {
   return (
     <div className="miApp">
-     Hola todo piola 
+    <Navbar/>
     </div>
   );
 }
+
+
 
 export default App;
