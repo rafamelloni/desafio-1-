@@ -1,31 +1,37 @@
-export default function Navbar() {
-   const headerStyles = {
-       display: "flex",
-       flexWrap: "wrap",
-       justifyContent: "space-between",
-       listStyle: "none",
-       backgroundColor: "red",
-   }
+import {Navbar, Container, Nav, NavDropdown} from "react-bootstrap"
+import CartIcon from "../CartIcon/CartIcon"
+export default function header() {
+  
+   
    
    
     return ( 
-    <header className="header">
-    <div className="Logo"> logo</div>  
-         <ul className="links" style={headerStyles}>
-             <li>
-productos
-             </li>
-             <li>
-                 Inicio
-             </li>
-             <li>
-                 Perfil
-             </li>
-             <li>
-                 contactarme
-             </li>
-         </ul>
+<Navbar bg="light" expand="lg">
+  <Container>
+    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse id="basic-navbar-nav">
+      <Nav className="me-auto">
+        <Nav.Link href="#home">tetas</Nav.Link>
+        <Nav.Link href="#link">Link</Nav.Link>
+        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+          <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+        </NavDropdown>
+      </Nav>
+    </Navbar.Collapse>
+  </Container>
+  <CartIcon count={9}/>
+</Navbar>
        
-     </header>
+
+
+     
     )
+    
+        
+    
 }
