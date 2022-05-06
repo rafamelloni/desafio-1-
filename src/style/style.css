@@ -1,6 +1,14 @@
+
 .cartIcon{
-    size:10px;
+    size:20px;
 }
 .iconoDescarga{
-    size:10px;
+    size:20px;
 }
+.cartIcon {
+
+    width: 2.5rem;
+    float: left;
+    text-align: left;
+  
+  }
