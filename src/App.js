@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="miApp">
     <Header/>
-    <ItemCount/>
+    < ItemCount initial={1} stock={5} />
     </div>
     
   );
