@@ -1,23 +1,25 @@
 import React, { useState } from "react"
 import "./ItemCount.css"
 
-export default ItemCount = ()=>{
-    const [count, setCount] = useState(0);
-    const handleCount = () => {
-        if (count < 5){
-          setCount (count + 1)
-        } 
-       }
+ export const ItemCount = ({initial, stock, onAdd})=>{
+    const [count, setCount] = useState(initial);
+    const decrease = ()=>{
+      setCount(count - 1);
+    }
+
+    const increase = ()=>{
+      setCount(count + 1);
+    }
+
     return(
         <>
 <div className="botones">
       
-      <input type="button" value="-" className="botonResta" onClick={()=> setCount(count - 1)} />
-      <p> remera zara  {count}</p>
-      <input type="button" value="+" className="botonSuma" onClick={handleCount}/>  
+      <input disabled={count <= 1}  type="button" value="-" className="botonResta" onClick={decrease} />
+      <p> remera zara {count}</p>
+      <input disabled= {count >= stock} type="button" value="+" className="botonSuma" onClick={increase}/>  
       
       </div>
-  
       <div>
         
       <input type="button" value="Agergar Al Carrito" />
@@ -25,3 +27,5 @@ export default ItemCount = ()=>{
       </>
     )
 }
+
+export default ItemCount;
