@@ -22,7 +22,7 @@ import "./ItemCount.css"
       </div>
       <div>
         
-      <input type="button" value="Agergar Al Carrito" />
+      <input type="button" value="Agergar Al Carrito" disabled= {stock <= 0 } onClick={()=> onAdd(count)} />
       </div>
       </>
     )
